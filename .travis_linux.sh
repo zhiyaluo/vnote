@@ -57,13 +57,21 @@ tree /opt/qt59/lib/
 
 set -x
 # Compile xcb-imdkit for fcitx5
+sudo apt-get -y install libxcb1-dev libxcb-keysyms1-dev libxcb-util0-dev
 git clone https://gitlab.com/fcitx/xcb-imdkit.git
 cd xcb-imdkit
 mkdir build && cd $_ && cmake .. && make -j`nproc` && sudo make install
 
 # Compile fcitx5
+sudo apt-get -y install libsystemd-daemon-dev libdbus-1-dev libxcb-xkb-dev libxcb-ewmh-dev libxcb-xinerama0-dev libxcb-icccm4-dev libwayland-dev libevent-dev libisocodes-dev
+
+git clone https://github.com/fmtlib/fmt.git
+cd fmt
+cmake CMakeLists.txt
+make
+sudo make install
+
 git clone https://gitlab.com/fcitx/fcitx5.git
-apt install libfmt-dev
 cd fcitx5
 mkdir build && cd $_ && cmake .. && make -j`nproc` && sudo make install
 
