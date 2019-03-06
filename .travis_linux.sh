@@ -55,6 +55,32 @@ sudo cp /usr/local/lib/libFcitxQt5WidgetsAddons.so* /opt/qt*/lib/
 
 tree /opt/qt59/lib/
 
+set -x
+# Compile xcb-imdkit for fcitx5
+git clone https://gitlab.com/fcitx/xcb-imdkit.git
+cd xcb-imdkit
+mkdir build && cd $_ && cmake .. && make -j`nproc` && sudo make install
+
+# Compile fcitx5
+git clone https://gitlab.com/fcitx/fcitx5.git
+apt install libfmt-dev
+cd fcitx5
+mkdir build && cd $_ && cmake .. && make -j`nproc` && sudo make install
+
+# libime
+git clone https://gitlab.com/fcitx/libime.git
+cd libime
+git submodule update --init
+mkdir build && cd $_ && cmake .. && make -j`nproc` && sudo make install
+
+# fcitx5-qt
+git clone https://gitlab.com/fcitx/fcitx5-qt.git
+cd fcitx5-qt
+mkdir build && cd $_ && cmake .. && make -j`nproc` && sudo make install
+
+find /usr -name "libfcitx5platforminputcontextplugin.so"
+set +x
+
 cd ${project_dir}
 mkdir build
 cd build
