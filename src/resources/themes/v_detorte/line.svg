@@ -1,6 +1,1 @@
-<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
- <g>
-  <title>Layer 2</title>
-  <rect stroke="null" id="svg_3" height="510.999989" width="51" y="0.100029" x="225.3" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" fill="#585858"/>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="512" height="512"><g><title>Layer 2</title><rect id="svg_3" width="51" height="511" x="225.3" y=".1" fill="#585858" stroke="null" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null"/></g></svg>
